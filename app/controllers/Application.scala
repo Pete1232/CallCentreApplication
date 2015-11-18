@@ -8,9 +8,4 @@ class Application extends Controller {
   def index = Action {
     Ok("Hello, World!")
   }
-
-  def hello(name:String) = Action {
-    Ok(views.html.hello(name))
-  }
-
 }
