@@ -1,17 +1,26 @@
 package controllers
 
-import entities.Customer
-import play.api._
+import models.entities.Customer
+import play.api.data.Form
+import play.api.data.Forms._
 import play.api.mvc._
 
 class Application extends Controller {
 
-  def index = Action {
-    Ok("Hello, World!")
-  }
+  val newCustomerForm = Form(mapping(
+    "cid" -> longNumber,
+    "username" -> nonEmptyText,
+    "email" -> email)(Customer.apply)(Customer.unapply)
+  )
 
-  def home = Action {
-    val customers = Customer.findAll
-    Ok(views.html.index(customers))
+  def createForm() = Action(
+    Ok(views.html.newcustomer(newCustomerForm))
+  )
+
+  def create() = Action{implicit request =>
+    newCustomerForm.bindFromRequest.fold(
+      formWithErrors => BadRequest(views.html.newcustomer(formWithErrors)),
+      value => Ok("Request created: " + value)
+    )
   }
 }

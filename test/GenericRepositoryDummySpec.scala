@@ -1,4 +1,4 @@
-import entities.Customer
+import models.entities.Customer
 import models.GenericRepositoryDummy
 
 /**

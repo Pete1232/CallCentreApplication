@@ -1,9 +1,9 @@
-package entities
+package models.entities
 
 /**
   * Created by pnewman on 18/11/2015.
   */
-case class Customer(cid: Int, username: String, email: String) {
+case class Customer(cid: Long, username: String, email: String) {
 }
 
 object Customer{
@@ -13,7 +13,7 @@ object Customer{
     Customer(3,"Charlie Charles","c.charles@nbgardens.com")
   )
 
-  def findAll: List[Customer] ={
+  def findAll: List[Customer] = {
     customers.toList.sortBy(_.cid)
   }
 }

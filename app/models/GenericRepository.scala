@@ -1,6 +1,6 @@
 package models
 
-import entities.Customer
+import models.entities.Customer
 
 /**
   * Created by pnewman on 18/11/2015.

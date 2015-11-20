@@ -1,0 +1,17 @@
+@(newCustomerForm: Form[entities.Customer])
+
+@import play.api.Play.current
+@import play.api.i18n._
+@import play.api.i18n.Messages.Implicits._
+@import views.html.helper._
+@import b3.vertical.fieldConstructor
+
+@main("New Customer Creation Form"){
+    @b3.form(action = routes.Application.create){
+        @b3.text(newCustomerForm("cid"), '_label -> "Customer ID", 'placeholder -> "Name")
+        @b3.text(newCustomerForm("username"), '_label -> "Username", 'placeholder -> "Username")
+        @b3.email(newCustomerForm("email"), '_label -> "Email", 'placeholder -> "Email")
+        @b3.submit('class -> "btn btn-default"){ <span class="glyphicon glyphicon-ok"></span> Submit
+        }
+    }
+}
