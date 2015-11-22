@@ -20,7 +20,11 @@ class Application extends Controller {
   def create() = Action{implicit request =>
     newCustomerForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.newcustomer(formWithErrors)),
-      value => Ok("Request created: " + value)
+      value => Redirect(routes.Application.formSuccess(value+""))
     )
+  }
+
+  def formSuccess(value: String) = Action {
+    Ok("Customer created: " + value )
   }
 }
