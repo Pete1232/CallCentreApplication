@@ -11,7 +11,8 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   specs2 % Test,
-  "com.adrianhurt" %% "play-bootstrap3" % "0.4.5-P24"
+  "com.adrianhurt" %% "play-bootstrap3" % "0.4.5-P24",
+  "org.reactivemongo" %% "reactivemongo" % "0.11.7"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"

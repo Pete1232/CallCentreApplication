@@ -1,4 +1,4 @@
-import org.scalatest.{Matchers, FlatSpec}
+import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * Created by pnewman on 18/11/2015.

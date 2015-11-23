@@ -3,6 +3,7 @@ package models.entities
 /**
   * Created by pnewman on 18/11/2015.
   */
+
 case class Customer(cid: Long, username: String, email: String) {
 }
 

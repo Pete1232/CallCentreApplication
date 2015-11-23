@@ -1,0 +1,21 @@
+use NBGardens
+
+db.Customer.insert([
+{
+        "_class" : "models.entities.Customer",
+        "cid" : 1,
+        "username" : "Al Stock",
+        "email" : "al@stock.com",
+},
+{
+        "_class" : "models.entities.Customer",
+        "cid" : 2,
+        "username" : "Ben Back",
+        "email" : "ben@back.com",
+},
+{
+        "_class" : "models.entities.Customer",
+        "cid" : 3,
+        "username" : "Chris Corder",
+        "email" : "chris@corder.com",
+}])

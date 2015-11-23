@@ -1,14 +1,16 @@
-import models.entities.Customer
+package views
 
+import models.entities.Customer
+import org.scalatest.{Matchers, FlatSpec}
 import play.api.data.Form
 import play.api.data.Forms._
-import play.api.test._
 import play.api.test.Helpers._
+import play.api.test._
 
 /**
   * Created by pnewman on 20/11/2015.
   */
-class ViewSpec extends UnitSpec{
+class NewCustomerSpec extends FlatSpec with Matchers{
 
   def testNewCustomer: Unit ={
     val testForm = Form(mapping(
@@ -25,7 +27,7 @@ class ViewSpec extends UnitSpec{
     }
 
     it should "contain a form field for customer ID" in{
-      contentAsString(html) should include ("cid_field")
+      contentAsString(html) should include("cid_field")
     }
 
     it should "contain a form field for customer username" in{
