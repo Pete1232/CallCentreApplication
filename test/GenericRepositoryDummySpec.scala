@@ -1,5 +1,6 @@
 import models.entities.Customer
-import models.GenericRepositoryDummy
+import models.repositories
+import models.repositories.GenericRepositoryDummy
 
 /**
   * Created by pnewman on 18/11/2015.
@@ -12,7 +13,7 @@ class GenericRepositoryDummySpec extends UnitSpec{
       GenericRepositoryDummy.findById(3) should be(Customer.findAll(2))
     }
     it should "return null if no customer with the given Id can be found" in {
-      models.GenericRepositoryDummy.findById(52) should be(null)
+      repositories.GenericRepositoryDummy.findById(52) should be(null)
     }
   }
   testFindById
